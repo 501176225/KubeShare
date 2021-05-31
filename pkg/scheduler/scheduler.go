@@ -55,45 +55,31 @@ func ScheduleAlgorithmBestFit(isGPUPod bool, gpu_request float64, gpu_mem int64,
 	var wait sync.WaitGroup
 
 	scheduleNode := func(nodeName string, nodeRes *NodeResource) {
-		//如果CPU和Memory资源不够，直接返回
 		if nodeRes.CpuFree < cpuReqTotal || nodeRes.MemFree < memReqTotal {
 			wait.Done()
 			return
 		}
-
 		if isGPUPod {
 			findTheHole := false
-			//遍历结点中的每一个GPU
 			for id, gpu := range nodeRes.GpuFree {
-				//资源不够，跳过
 				if gpu.GPUFreeReq < gpu_request_millivalue || gpu.GPUFreeMem < gpu_mem {
 					continue
 				}
-				//找到满足的GPU
 				findTheHole = true
-				//分配后剩余资源越多，得分越多
-				//可在此更改评分
-				nodeScore := gpu.GPUFreeReq-gpu_request_millivalue
-				tryBestNode(nodeScore, nodeName, id)
+				tryBestNode(gpu.GPUFreeReq-gpu_request_millivalue, nodeName, id)
 			}
 			if !findTheHole {
-				//如果有剩余的GPU，分配虚拟GPU ID
 				if nodeRes.GpuFreeCount > 0 {
-					nodeScore := 1000-gpu_request_millivalue
-					tryBestNode(nodeScore, nodeName, kubesharev1.NewGPUID(5))
+					tryBestNode(1000-gpu_request_millivalue, nodeName, kubesharev1.NewGPUID(5))
 				}
-
-				//
 			}
 		} else {
-			//不需要GPU，按照CPU排序
-			nodeScore := nodeRes.CpuFree-cpuReqTotal
 			tryBestNode(nodeRes.CpuFree-cpuReqTotal, nodeName, "")
 		}
 		wait.Done()
 	}
-	wait.Add(len(nodeResources))
 
+	wait.Add(len(nodeResources))
 	for nodeName, nodeRes := range nodeResources {
 		go scheduleNode(nodeName, nodeRes)
 	}

@@ -20,19 +20,10 @@ RUN wget -nv -O - https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz | tar -C 
 
 RUN export GO111MODULE=on && \
     export GOPROXY=https://goproxy.cn && \
-    make kubeshare-scheduler
-    
+    make kubeshare-device-manager
+
 FROM alpine:3.9
 
-COPY --from=build /go/src/kubeshare/bin/kubeshare-scheduler /usr/bin/kubeshare-scheduler
+COPY --from=build /go/src/kubeshare/bin/kubeshare-device-manager /usr/bin/kubeshare-device-manager
 
-CMD ["kubeshare-scheduler", "-alsologtostderr", "-v=4"]
-
-
-# docker cp . nifty_maxwell:/go
-
-# export GOLANG_VERSION=1.13.5
-# export GOPATH=/go
-# export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
-# mkdir -p /go/src/KubeShare
-# cd /go/src/KubeShare
+CMD ["kubeshare-device-manager", "-alsologtostderr", "-v=4"]
