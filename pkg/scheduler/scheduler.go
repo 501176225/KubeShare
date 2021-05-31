@@ -52,7 +52,7 @@ func ScheduleAlgorithmBestFit(isGPUPod bool, gpu_request float64, gpu_mem int64,
 
 	gpu_request_millivalue := int64(math.Ceil(gpu_request * (float64)(1000.0)))
 
-	var wait sync.WaitGroup\
+	var wait sync.WaitGroup
 
 	scheduleNode := func(nodeName string, nodeRes *NodeResource) {
 		//如果CPU和Memory资源不够，直接返回
