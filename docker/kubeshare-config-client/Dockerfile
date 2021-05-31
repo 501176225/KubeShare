@@ -8,7 +8,7 @@ ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
 WORKDIR /go/src/kubeshare
 
-COPY ../../. .
+COPY . .
 
 RUN  sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
 RUN  apt-get clean
