@@ -46,7 +46,7 @@ const (
 	KubeShareNodeName           = "kubeshare/nodeName"
 	KubeShareRole               = "kubeshare/role"
 	KubeShareNodeGPUInfo        = "kubeshare/gpu_info"
-	ResourceNVIDIAGPU           = "aliyun.com/gpu"
+	ResourceNVIDIAGPU           = "aliyun.com/gpu-count"
 )
 
 // +genclient
