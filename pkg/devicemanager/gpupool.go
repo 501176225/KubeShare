@@ -15,8 +15,8 @@ import (
 	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/klog"
 
-	kubesharev1 "github.com/NTHU-LSALAB/KubeShare/pkg/apis/kubeshare/v1"
-	"github.com/NTHU-LSALAB/KubeShare/pkg/lib/bitmap"
+	kubesharev1 "github.com/501176225/KubeShare/pkg/apis/kubeshare/v1"
+	"github.com/501176225/KubeShare/pkg/lib/bitmap"
 )
 
 var (

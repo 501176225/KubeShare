@@ -194,7 +194,7 @@ More details in [System Architecture](doc/architecture.md)
 
 ### Compiling
 ```
-git clone https://github.com/NTHU-LSALAB/KubeShare.git
+git clone https://github.com/501176225/KubeShare.git
 cd KubeShare
 make
 ```
@@ -211,7 +211,7 @@ make
 * go.mod: KubeShare dependencies.
 
 ## GPU Isolation Library
-Please refer to [Gemini](https://github.com/NTHU-LSALAB/Gemini).
+Please refer to [Gemini](https://github.com/501176225/Gemini).
 
 # TODO
 * Convert vGPU UUID update trigger method from dummy Pod creation handler to dummy Pod sending data to controller.  

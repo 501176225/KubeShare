@@ -1,7 +1,7 @@
 package scheduler
 
 import (
-	kubesharev1 "github.com/NTHU-LSALAB/KubeShare/pkg/apis/kubeshare/v1"
+	kubesharev1 "github.com/501176225/KubeShare/pkg/apis/kubeshare/v1"
 )
 
 var filters = []func(NodeResources, *kubesharev1.SharePod){

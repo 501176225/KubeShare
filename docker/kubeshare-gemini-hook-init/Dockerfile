@@ -6,7 +6,7 @@ WORKDIR /tmp/build
 
 RUN apt update && \
     apt install -y git && \
-    git clone https://github.com/NTHU-LSALAB/Gemini.git && cd Gemini && \
+    git clone https://github.com/501176225/Gemini.git && cd Gemini && \
     make -C src
 
 # FROM busybox:1.31.1-glibc

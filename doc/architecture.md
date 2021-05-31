@@ -26,7 +26,7 @@
 
 ![workflow6](workflow6.png)
 
-7. When Pods started running, the GPU function calls were intercepted by Gemini Library. These GPU computing requests were scheduled by gemini-scheduler one-by-one. More details can refer to [Gemini](https://github.com/NTHU-LSALAB/Gemini).
+7. When Pods started running, the GPU function calls were intercepted by Gemini Library. These GPU computing requests were scheduled by gemini-scheduler one-by-one. More details can refer to [Gemini](https://github.com/501176225/Gemini).
 
 ![workflow7](workflow7.png)
 

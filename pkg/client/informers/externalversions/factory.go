@@ -23,9 +23,9 @@ import (
 	sync "sync"
 	time "time"
 
-	versioned "github.com/NTHU-LSALAB/KubeShare/pkg/client/clientset/versioned"
-	internalinterfaces "github.com/NTHU-LSALAB/KubeShare/pkg/client/informers/externalversions/internalinterfaces"
-	kubeshare "github.com/NTHU-LSALAB/KubeShare/pkg/client/informers/externalversions/kubeshare"
+	versioned "github.com/501176225/KubeShare/pkg/client/clientset/versioned"
+	internalinterfaces "github.com/501176225/KubeShare/pkg/client/informers/externalversions/internalinterfaces"
+	kubeshare "github.com/501176225/KubeShare/pkg/client/informers/externalversions/kubeshare"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

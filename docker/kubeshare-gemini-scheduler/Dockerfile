@@ -8,7 +8,7 @@ COPY . kubeshare
 
 RUN apt update && \
     apt install -y git && \
-    git clone https://github.com/NTHU-LSALAB/Gemini.git && cd Gemini && \
+    git clone https://github.com/501176225/Gemini.git && cd Gemini && \
     make -C src
 
 FROM python:3.8.1-buster

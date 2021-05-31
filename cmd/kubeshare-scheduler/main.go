@@ -31,10 +31,10 @@ import (
 	// Uncomment the following line to load the gcp plugin (only required to authenticate against GKE clusters).
 	// _ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
 
-	clientset "github.com/NTHU-LSALAB/KubeShare/pkg/client/clientset/versioned"
-	informers "github.com/NTHU-LSALAB/KubeShare/pkg/client/informers/externalversions"
-	kubesharecontroller "github.com/NTHU-LSALAB/KubeShare/pkg/scheduler"
-	"github.com/NTHU-LSALAB/KubeShare/pkg/signals"
+	clientset "github.com/501176225/KubeShare/pkg/client/clientset/versioned"
+	informers "github.com/501176225/KubeShare/pkg/client/informers/externalversions"
+	kubesharecontroller "github.com/501176225/KubeShare/pkg/scheduler"
+	"github.com/501176225/KubeShare/pkg/signals"
 )
 
 var (

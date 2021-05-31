@@ -1,4 +1,4 @@
-module github.com/NTHU-LSALAB/KubeShare
+module github.com/501176225/KubeShare
 
 go 1.13
 
