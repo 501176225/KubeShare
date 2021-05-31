@@ -10,9 +10,16 @@ WORKDIR /go/src/kubeshare
 
 COPY . .
 
+RUN  sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
+RUN  apt-get clean
+
 RUN apt update && \
-    apt install -y g++ wget make && \
-    wget -nv -O - https://storage.googleapis.com/golang/go${GOLANG_VERSION}.linux-amd64.tar.gz | tar -C /usr/local -xz && \
+    apt install -y g++ wget make
+
+RUN wget -nv -O - https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz | tar -C /usr/local -xz
+
+RUN export GO111MODULE=on && \
+    export GOPROXY=https://goproxy.cn && \
     make kubeshare-config-client
 
 FROM debian:stretch-slim

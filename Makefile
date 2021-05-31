@@ -10,9 +10,12 @@ PACKAGE_PREFIX=github.com/501176225/KubeShare/cmd/
 
 all: $(TARGET)
 
-kubeshare-device-manager kubeshare-scheduler:
+kubeshare-device-manager:
 	$(GO_MODULE) $(ALPINE_COMPILE_FLAGS) $(GO) build -o $(BIN_DIR)$@ $(PACKAGE_PREFIX)$@
 
+kubeshare-scheduler:
+	$(GO_MODULE) $(ALPINE_COMPILE_FLAGS) $(GO) build -o $(BIN_DIR)$@ $(PACKAGE_PREFIX)$@
+	
 kubeshare-config-client:
 	$(GO_MODULE) $(NVML_COMPILE_FLAGS) $(GO) build -o $(BIN_DIR)$@ $(PACKAGE_PREFIX)$@
 
