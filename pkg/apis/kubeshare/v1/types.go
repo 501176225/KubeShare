@@ -40,7 +40,7 @@ const (
 	// kubeshare constants
 	KubeShareResourceGPURequest = "kubeshare/gpu_request"
 	KubeShareResourceGPULimit   = "kubeshare/gpu_limit"
-	KubeShareResourceGPUMemory  = "aliyun.com/gpu-"
+	KubeShareResourceGPUMemory  = "kubeshare/gpu_mem"
 	KubeShareResourceGPUID      = "kubeshare/GPUID"
 	KubeShareDummyPodName       = "kubeshare-vgpu"
 	KubeShareNodeName           = "kubeshare/nodeName"
