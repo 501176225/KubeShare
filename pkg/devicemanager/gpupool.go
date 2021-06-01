@@ -397,8 +397,8 @@ func (c *Controller) getAndSetUUIDFromDummyPod(nodeName, GPUID, podName string, 
 	isFound := false
 
 	for id := range nodesInfo[nodeName].UUID2Port {
+		klog.Infof("aaaaaaa'%s' '%s' ", id, uuid)
 		if id == uuid {
-			klog.Infof("'%s' '%s' ", id, uuid)
 			isFound = true
 		}
 	}
